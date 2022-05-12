@@ -23,7 +23,7 @@
         <Button Content="Search" Grid.Column="1" HorizontalAlignment="Center" Margin="0,346,0,0" VerticalAlignment="Top" FontSize="14" Height="22" Width="49" Background="#FF88CAE3"/>
         <ListBox x:Name="gmisListBox"  Grid.Column="2" Background="#FFC7CED0" Margin="0"
 			ItemsSource="{Binding Source={StaticResource studentList}}"/>
-        <Button Content="&lt;" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Height="34" Width="42" Click="test"/>
-        
+        <Button Content="&lt;" HorizontalAlignment="Left" Margin="10,386,0,15" Width="42" Click="test"/>
+
     </Grid>
 </Window>

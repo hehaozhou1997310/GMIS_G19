@@ -10,7 +10,7 @@
         
         <TextBox Text="Master Student View" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" Margin="3,20,0,351" RenderTransformOrigin="0.592,-0.152" Grid.ColumnSpan="2"/>
         <StackPanel Grid.Column="0" Margin="0,30,10,0">
-        <Button Content="View  All  list" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Height="33" Width="330" Click="Button_Click" FontSize="24" Background="#FF88CAE3"/>
+        <Button Content="View  All  List" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Height="33" Width="330" Click="Button_Click" FontSize="24" Background="#FF88CAE3"/>
         <Button Content="View List for a search" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="31" Width="330" Click="Button_Click_1" FontSize="24" Background="#FF88CAE3"/>
         <Button Content="&lt;" Height="31" Width="31" Click="Button_Click_2" FontSize="16" Margin="30,80,0,0" HorizontalAlignment="Left"/>
         </StackPanel>

@@ -14,7 +14,7 @@
         
         <StackPanel Grid.Column="0" Margin="3,2,7,-2">
         <TextBox Text="View All List" TextWrapping="Wrap" Width="350" FontSize="36" HorizontalAlignment="Center" Margin="0,20,0,0" TextAlignment="Center"/>
-        <Button Content="View  All  Goups list" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Height="33" Width="330" Click="Button_Click" FontSize="24" Background="#FF88CAE3"/>
+        <Button Content="View  All  Goups List" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Height="33" Width="330" Click="Button_Click" FontSize="24" Background="#FF88CAE3"/>
         <Button Content="View All Classes LIst" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Height="31" Width="330"  FontSize="24"  Background="#FF88CAE3" Click="Button_Click_1"/>
         <Button Content="View All Meetings List" HorizontalAlignment="Center"  Margin="0,50,0,0" VerticalAlignment="Top" Width="330" FontSize="24" Click="Button_Click" Background="#FF88CAE3" />
         <Button Content="View All Students List" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="24" Width="330" Click="Button_Click" Background="#FF88CAE3"/>

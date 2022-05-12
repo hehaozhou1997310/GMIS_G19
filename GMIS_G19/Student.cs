@@ -25,7 +25,7 @@ namespace GMIS_G19
 
         public override string ToString()
         {
-            return Student_id + Given_name + Family_name + " in " + Group_id + " is " + Category;
+            return Student_id + Given_name + Family_name + " in " + Group_id + Campus + " is " + Category;
         }
 
 

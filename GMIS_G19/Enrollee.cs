@@ -17,14 +17,17 @@ namespace GMIS_G19
 
         private List<Meeting> student1;
         public List<Class> Meeting { get { return student; } set { } }
-        private ObservableCollection<Meeting> viewableMembers;
-     
+       
+
+        private List<StudentGroup> student2;
+        public List<Class> StudentGroup { get { return student; } set { } }
+        
 
         public Enrollee()
         {
             student = Agency.LoadAll();
-            VisibleMembers = new ObservableCollection<Class>(student);
-            student1 = Agency.LoadAllMeeting1();
+            student1 = Agency.LoadAllMeeting();
+            student2 = Agency.LoadAllStudentGroup();
             VisibleMembers = new ObservableCollection<Class>(student);
         }
 

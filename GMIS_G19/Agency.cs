@@ -33,7 +33,6 @@ namespace GMIS_G19
         {
             if (conn == null)
             {
-                //Note: This approach is not thread-safe
                 string connectionString = String.Format("Database={0};Data Source={1};User Id={2};Password={3}", db, server, user, pass);
                 conn = new MySqlConnection(connectionString);
             }
@@ -86,7 +85,6 @@ namespace GMIS_G19
             return student;
         }
 
-
         public static List<Class> LoadClass(int id)
         {
             List<Class> work = new List<Class>();
@@ -137,9 +135,9 @@ namespace GMIS_G19
             return work;
         }
 
-        public static List<Meeting> LoadAllMeeting1()
+        public static List<StudentGroup> LoadAllStudentGroup()
         {
-            List<Meeting> student = new List<Meeting>();
+            List<StudentGroup> student = new List<StudentGroup>();
 
             MySqlConnection conn = GetConnection();
             MySqlDataReader rdr = null;
@@ -148,27 +146,21 @@ namespace GMIS_G19
             {
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("select meeting_id, group_id, day, start, end, room from class", conn);
+                MySqlCommand cmd = new MySqlCommand("select group_id, group_name from studentgroup", conn);
                 rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    //Note that in your assignment you will need to inspect the *type* of the
-                    //class/student before deciding which kind of concrete class to create.
-                    student.Add(new Meeting
+                    student.Add(new StudentGroup
                     {
-                        Meeting_id = rdr.GetInt32(0),
-                        Group_id = rdr.GetInt32(1),
-                        Day = ParseEnum<Day>(rdr.GetString(2)),
-                        Start = rdr.GetString(3),
-                        End = rdr.GetString(3),
-                        Room = rdr.GetString(4) + " " + rdr.GetString(5)
+                        Group_id = rdr.GetInt32(0),
+                        Group_name = rdr.GetString(1) + " " + rdr.GetString(2)
                     });
                 }
             }
             catch (MySqlException e)
             {
-                ReportError("loading meeting", e);
+                ReportError("loading studentgroup", e);
             }
             finally
             {
@@ -185,10 +177,9 @@ namespace GMIS_G19
             return student;
         }
 
-
-        public static List<Meeting> LoadMeeting1(int id)
+        public static List<StudentGroup> LoadStudentGroup(int id)
         {
-            List<Meeting> work = new List<Meeting>();
+            List<StudentGroup> work = new List<StudentGroup>();
 
             MySqlConnection conn = GetConnection();
             MySqlDataReader rdr = null;
@@ -197,8 +188,7 @@ namespace GMIS_G19
             {
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("select meeting_id, group_id, day, start, end, room " +
-                                                    "from meeting as pub, student as respub " +
+                MySqlCommand cmd = new MySqlCommand("select group_id, group_name from studentgroup as pub, student as respub " +
                                                     "where pub.group_id=respub.group_id and student_id=?id", conn);
 
                 cmd.Parameters.AddWithValue("id", id);
@@ -206,20 +196,16 @@ namespace GMIS_G19
 
                 while (rdr.Read())
                 {
-                    work.Add(new Meeting
+                    work.Add(new StudentGroup
                     {
-                        Meeting_id = rdr.GetInt32(0),
-                        Group_id = rdr.GetInt32(1),
-                        Day = ParseEnum<Day>(rdr.GetString(2)),
-                        Start = rdr.GetString(3),
-                        End = rdr.GetString(3),
-                        Room = rdr.GetString(4)
+                        Group_id = rdr.GetInt32(0),
+                        Group_name = rdr.GetString(1) + " " + rdr.GetString(2)
                     });
                 }
             }
             catch (MySqlException e)
             {
-                ReportError("loading meetinges", e);
+                ReportError("loading studentgroups", e);
             }
             finally
             {
@@ -234,9 +220,11 @@ namespace GMIS_G19
             }
 
             return work;
-
         }
-        public static List<Meeting> LoadAllMeeting()
+
+
+
+            public static List<Meeting> LoadAllMeeting()
         {
             List<Meeting> student = new List<Meeting>();
 
@@ -335,14 +323,8 @@ namespace GMIS_G19
             return work;
 
         }
-
-
-
-
-
-
-
-
+        
+        
 
 
         private static void ReportError(string msg, Exception e)
