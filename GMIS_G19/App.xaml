@@ -1,0 +1,14 @@
+﻿<Application x:Class="GMIS_G19.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GMIS_G19"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <local:Enrollee x:Key="enrollee"/>
+        <ObjectDataProvider x:Key="studentList"
+                            ObjectInstance="{StaticResource enrollee}"
+                            MethodName="GetViewableList">
+        </ObjectDataProvider>
+    </Application.Resources>
+</Application>
