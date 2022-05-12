@@ -8,10 +8,10 @@
         Title="ViewForSearch" Height="450" Width="800">
     <Grid>
         <TextBox Text="View List for a Search" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" Margin="3,2,0,351" RenderTransformOrigin="0.592,-0.152" Grid.ColumnSpan="2"/>
-        <Button Content="View Goups list in a class" HorizontalAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Height="60" Width="390" FontSize="24" Background="#FF88CAE3"/>
+        <Button Content="View Goups list in a class" HorizontalAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Height="60" Width="390" FontSize="24" Background="#FF88CAE3" Click="Button_Click"/>
         <Button Content="View Classes LIst for a student" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" Height="60" Width="390"  FontSize="24" Background="#FF88CAE3"/>
         <Button Content="View Meetings List for a student"  Margin="0,233,0,0" VerticalAlignment="Top" FontSize="24" Height="63" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="390" Background="#FF88CAE3"/>
         <Button Content="View Students List in a group" HorizontalAlignment="Center" Margin="0,317,4,0" VerticalAlignment="Top" FontSize="24" Width="390" Height="60" Background="#FF88CAE3"/>
-        <Button Content="&lt;" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Height="34" Width="42"/>
+        <Button Content="&lt;" HorizontalAlignment="Left" Margin="10,386,0,0" Width="42" Height="34" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Window>
